@@ -1,0 +1,33 @@
+LAB 11/15/2017
+
+SQL> select e.employee_id,e.first_name,e.salary,d.department_id,d.department_name
+  2  from employees e
+  3  select e.employee_id,e.first_name,e.salary,d.department_id,d.department_name
+
+---------------------------------------------------------------------------------
+
+SQL> select e.employee_id,e.first_name,e.salary,d.department_id,d.department_nam
+e,l.city,l.state_provience
+  2  from employees e
+  3  join departments d on(e.department_id=    d.department_id)
+  4  join locations l on(d.location_id    = l.location_id);
+----------------------------------------------------------------------------------
+
+
+SQL> select e.employee_id,e.first_name,e.salary,d.department_id,d.department_nam
+e,l.city,l.state_province, c.country_name
+  2  from employees e
+  3  join departments d on(e.department_id=    d.department_id)
+  4  join locations l on(d.location_id    = l.location_id)
+  5  join countries c on(l.country_id = c.country_id);	
+----------------------------------------------------------------------------------
+
+
+SQL> select e.employee_id,e.first_name,e.salary,d.department_id,d.department_nam
+e,l.city,l.state_province, c.country_name,r.region_name
+  2  from employees e
+  3  join departments d on(e.department_id=    d.department_id)
+  4  join locations l on(d.location_id    = l.location_id)
+  5  join countries c on(l.country_id = c.country_id)
+  6  join regions r on(c.region_id=  r.region_id);
+		
